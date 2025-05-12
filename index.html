@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
         <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
@@ -11,7 +12,8 @@
     body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
+  touch-action: manipulation;
 }
 
 #deck-container {
@@ -517,7 +519,7 @@
   "views": [
     {
       "@@type": "MapView",
-      "controller": true
+      "controller": {"touchRotate": true, "dragMode": "pan"}
     }
   ]
 };
